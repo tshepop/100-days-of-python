@@ -1,4 +1,4 @@
-![AppBrewery]("images/AppBreweryWallpaper9.jpg")
+![appbrewery](/images/AppBreweryWallpaper9.jpg)
 
 # 100 Days of Python Bootcamp
 
@@ -14,4 +14,4 @@ Let's go!
 
 ## :man_technologist: :man_student: | Beginner
 
-- [Day 9]: Dictionaries, Nesting and Secret Auction (https://replit.com/@supercodr/blind-auction-start)
+- [Day 9](https://replit.com/@supercodr/blind-auction-start): Dictionaries, Nesting and Secret Auction
