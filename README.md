@@ -1,3 +1,5 @@
+![AppBrewery](images/AppBreweryWallpaper.jpg)
+
 # 100 Days of Python Bootcamp
 
 This is the journey of working through python challenges. This repository will be used as a record of daily challenges completed, while going through The Complete Python Pro Bootcamp for 2023. With this repo I hope to show my understanding of the python language and how I use different ways arriving at solutions.
