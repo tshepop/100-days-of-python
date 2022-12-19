@@ -1,4 +1,4 @@
-![appbrewery](https://github.com/tshepop/100-days-of-python/tree/main/images/AppBreweryWallpaper9.jpg)
+![appbrewery](https://github.com/tshepop/100-days-of-python/blob/main/images/AppBreweryWallpaper%209.jpg)
 # 100 Days of Python Bootcamp
 
 This is the journey of working through python challenges. This repository will be used as a record of daily challenges completed, while going through The Complete Python Pro Bootcamp for 2023. With this repo I hope to show my understanding of the python language and how I use different ways arriving at solutions.
