@@ -9,7 +9,7 @@ To move from beginner to mastery of Python. It will take years to full mastery, 
 
 ## Main Goal
 To be a **backend developer**.
-Let's go!
+Let's go! :rocket:
 
 ## :man_technologist: :man_student: | Beginner
 
