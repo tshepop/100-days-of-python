@@ -13,4 +13,4 @@ Let's go!
 
 ## :man_technologist: :man_student: | Beginner
 
-- [Day 9](https://replit.com/@supercodr/blind-auction-start): Dictionaries, Nesting and Secret Auction
+- [Day 9](day-9/README.md): Dictionaries, Nesting and Secret Auction
