@@ -6,6 +6,6 @@
 
 - [Secrete Auction](https://replit.com/@supercodr/blind-auction-start)
 
-#### Secrete Auction
+### Secrete Auction
 ---
 ![](secrete-auction.gif)
