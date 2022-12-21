@@ -2,3 +2,7 @@
 
 **Day 10 Final Project:**
 - [Calculator](https://replit.com/@supercodr/calculator-start)
+
+### Calculator
+---
+![](calculator.gif)
