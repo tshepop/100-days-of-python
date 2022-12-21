@@ -5,3 +5,7 @@
 **Day 9 Final Project:**
 
 - [Secrete Auction](https://replit.com/@supercodr/blind-auction-start)
+
+#### Secrete Auction
+---
+![](secrete-auction.gif)
