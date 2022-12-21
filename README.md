@@ -14,3 +14,4 @@ Let's go! :rocket:
 ## :man_technologist: :man_student: | Beginner
 
 - [Day 9](day-9/README.md): Dictionaries, Nesting and Secret Auction
+- [Day 10](day-10/README.md): Functions with Outputs
