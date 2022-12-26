@@ -6,3 +6,9 @@
 **Day 8 Final Project**
 
 [Caesar Cipher](https://replit.com/@supercodr/caesar-cipher)
+
+- Encode
+![](encode.gif)
+
+- Decode
+![](decode.gif)
