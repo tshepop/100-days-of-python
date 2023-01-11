@@ -18,6 +18,7 @@ Let's go! :rocket:
 
 ## :man_technologist: :man_student: | Beginner
 
+- [Day 5](day-5/README.md): Python Loops
 - [Day 7](day-7/README.md): Hangman
 - [Day 8](day-8/README.md): Functions parameters and Caesar cipher
 - [Day 9](day-9/README.md): Dictionaries, Nesting and Secret Auction
