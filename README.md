@@ -25,3 +25,4 @@ Let's go! :rocket:
 - [Day 9](day-9/README.md): Dictionaries, Nesting and Secret Auction
 - [Day 10](day-10/README.md): Functions with Outputs
 - [Day 12](day-12/README.md): Scope and Number guessing game
+- [Day 13](day-13/README.md): Debugging: How to Find and Fix errors
