@@ -26,3 +26,4 @@ Let's go! :rocket:
 - [Day 10](day-10/README.md): Functions with Outputs
 - [Day 12](day-12/README.md): Scope and Number guessing game
 - [Day 13](day-13/README.md): Debugging: How to Find and Fix errors
+- [Day 14](day-14/README.md): Higher Lower Game Project
