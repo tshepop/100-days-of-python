@@ -18,6 +18,7 @@ Let's go! :rocket:
 
 ## :man_technologist: :man_student: | Beginner
 
+- [Day 1](day-1/README.md): Working with variables in Python
 - [Day 4](day-4/README.md): Randomisation and Python Lists
 - [Day 5](day-5/README.md): Python Loops
 - [Day 7](day-7/README.md): Hangman
