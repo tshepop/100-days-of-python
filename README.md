@@ -20,7 +20,7 @@ Let's go! :rocket:
 
 - [Day 1](day-1/README.md): Working with variables in Python
 - [Day 2](day-2/README.md): Understanding data types and How to Manipulate Strings
-- [Day 3](day-2/README.md): Control Flow and Logical Operators
+- [Day 3](day-3/README.md): Control Flow and Logical Operators
 - [Day 4](day-4/README.md): Randomisation and Python Lists
 - [Day 5](day-5/README.md): Python Loops
 - [Day 7](day-7/README.md): Hangman
