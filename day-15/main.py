@@ -48,3 +48,17 @@ def make_coffee(start_order_resources, drink_ingredients):
 
 
 drinks_list = []
+
+
+def print_profit():
+    print("-" * 25)
+    print("daily profit report".upper().center(25, " "))
+    print("-" * 25)
+    counter = 0
+    for i in range(len(drinks_list)):
+        counter += 1
+        print(f"Drink sold: {drinks_list[i]}")
+
+    print(f"No. of drinks sold: {counter}")
+    print("-" * 25)
+    print(f"Todays profit: ${profit}")
