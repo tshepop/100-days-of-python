@@ -29,3 +29,12 @@ def displayReport():
     print("Milk ".ljust(15, ".") + milk)
     print("Coffee ".ljust(15, ".") + coffee)
     print("Cost ".ljust(15, ".") + money)
+
+
+def check_resources(order_resources, drink_ingredients):
+    """Check resources if they are enough to make a drink and return True else False"""
+    for item in drink_ingredients:
+        if drink_ingredients[item] >= order_resources[item]:
+            print(f"Sorry, there is not enough {item}!")
+            return False
+    return True
