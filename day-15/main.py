@@ -62,3 +62,19 @@ def print_profit():
     print(f"No. of drinks sold: {counter}")
     print("-" * 25)
     print(f"Todays profit: ${profit}")
+
+
+QUARTER = 0.25
+DIME = 0.10
+NICKLE = 0.05
+PENNY = 0.01
+
+turn_off = True
+
+while turn_off:
+    coffee_type = input("What would you like? (espresso/latte/cappuccino): ")
+
+    if coffee_type == "off":
+        turn_off = False
+    elif coffee_type == "report":
+        displayReport()
