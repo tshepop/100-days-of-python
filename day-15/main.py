@@ -38,3 +38,13 @@ def check_resources(order_resources, drink_ingredients):
             print(f"Sorry, there is not enough {item}!")
             return False
     return True
+
+
+def make_coffee(start_order_resources, drink_ingredients):
+    """Deduct/minus drink ingredients from main resources and return"""
+    for item in drink_ingredients:
+        start_order_resources[item] -= drink_ingredients[item]
+    return start_order_resources
+
+
+drinks_list = []
