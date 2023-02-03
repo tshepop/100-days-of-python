@@ -78,3 +78,86 @@ while turn_off:
         turn_off = False
     elif coffee_type == "report":
         displayReport()
+    elif coffee_type == "latte":
+        drink = MENU[coffee_type]
+
+        if check_resources(resources, drink["ingredients"]):
+
+            print("Please enter coins:")
+            c_quarter = float(input("How many quarters? "))
+            c_dimes = float(input("How many dimes? "))
+            c_nickles = float(input("How many nickles? "))
+            c_pennies = float(input("How many pennies? "))
+            coin = (QUARTER * c_quarter) + (DIME * c_dimes) + (NICKLE * c_nickles) + \
+                (PENNY * c_pennies)
+
+            coin = round(coin, 2)
+            # assign drink cost to money variable, which is a global variable
+            money = drink["cost"]
+            # test to see if enough coins, then pay for drink
+            if coin < money:
+                print(f"Sorry that not enough money. ${coin} refunded.")
+            else:
+                print("-" * 25)
+                resources = make_coffee(resources, drink["ingredients"])
+                profit += money
+                drinks_list.append(coffee_type)
+                print(f"Here is your {coffee_type}. Enjoy!")
+                print(f"Here is ${coin} dollars in change.")
+
+    elif coffee_type == "espresso":
+        drink = MENU[coffee_type]
+
+        if check_resources(resources, drink["ingredients"]):
+
+            print("Please enter coins:")
+            c_quarter = float(input("How many quarters? "))
+            c_dimes = float(input("How many dimes? "))
+            c_nickles = float(input("How many nickles? "))
+            c_pennies = float(input("How many pennies? "))
+            coin = (QUARTER * c_quarter) + (DIME * c_dimes) + (NICKLE * c_nickles) + \
+                (PENNY * c_pennies)
+
+            coin = round(coin, 2)
+            # assign drink cost to money variable, which is a global variable
+            money = drink["cost"]
+            # test to see if enough coins, then pay for drink
+            if coin < money:
+                print(f"Sorry that's not enough money. ${coin} refunded.")
+            else:
+                print("-" * 25)
+                resources = make_coffee(resources, drink["ingredients"])
+                profit += money
+                drinks_list.append(coffee_type)
+                print(f"Here is your {coffee_type}. Enjoy!")
+                print(f"Here is ${coin} dollars in change.")
+
+    elif coffee_type == "cappuccino":
+        drink = MENU[coffee_type]
+
+        if check_resources(resources, drink["ingredients"]):
+
+            print("Please enter coins:")
+            c_quarter = float(input("How many quarters? "))
+            c_dimes = float(input("How many dimes? "))
+            c_nickles = float(input("How many nickles? "))
+            c_pennies = float(input("How many pennies? "))
+            coin = (QUARTER * c_quarter) + (DIME * c_dimes) + \
+                (NICKLE * c_nickles) + (PENNY * c_pennies)
+
+            coin = round(coin, 2)
+            # assign drink cost to money variable, which is a global variable
+            money = drink["cost"]
+            # test to see if enough coins, then pay for drink
+            if coin < money:
+                print(
+                    f"Sorry that's not enough money. ${coin} refunded.")
+            else:
+                print("-" * 25)
+                resources = make_coffee(resources, drink["ingredients"])
+                profit += money
+                drinks_list.append(coffee_type)
+                print(f"Here is your {coffee_type}. Enjoy!")
+                print(f"Here is ${coin} dollars in change.")
+
+print_profit()
