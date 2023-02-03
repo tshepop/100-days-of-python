@@ -16,7 +16,8 @@ profit = 0
 def displayReport():
     global money
 
-    print("COFFEE MACHINE MAKER".center(26, "-"))
+    print()
+    print("COFFEE MACHINE MAKER REPORT".center(26, "-"))
     print("Available resources:")
     print()
 
@@ -29,6 +30,7 @@ def displayReport():
     print("Milk ".ljust(15, ".") + milk)
     print("Coffee ".ljust(15, ".") + coffee)
     print("Cost ".ljust(15, ".") + money)
+    print()
 
 
 def check_resources(order_resources, drink_ingredients):
