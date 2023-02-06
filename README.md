@@ -34,3 +34,4 @@ Let's go! :rocket:
 ## :man_technologist: :man_student: | Intermediate
 
 - [Day 15](day-15/README.md): Local Development Environment Setup and Coffee Machine
+- [Day 16](day-16/README.md): Object Oriented Programming (OOP)
