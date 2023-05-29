@@ -36,3 +36,4 @@ Let's go! :rocket:
 - [Day 15](day-15/README.md): Local Development Environment Setup and Coffee Machine
 - [Day 16](day-16/README.md): Object Oriented Programming (OOP)
 - [Day 17](day-17/README.md): The Quiz Project and the Benefits of OOP
+- [Day 18](day-18/README.md): Turtle and the GUI
