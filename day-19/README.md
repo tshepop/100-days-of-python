@@ -8,4 +8,4 @@
 
 ### Etch-a-Sketch Project
 
-![](
+![](etch-a-sketch.gif)
