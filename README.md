@@ -37,3 +37,4 @@ Let's go! :rocket:
 - [Day 16](day-16/README.md): Object Oriented Programming (OOP)
 - [Day 17](day-17/README.md): The Quiz Project and the Benefits of OOP
 - [Day 18](day-18/README.md): Turtle and the GUI
+- [Day 19](day-19/README.md): Instances, State and Higher Order Functions
