@@ -38,3 +38,4 @@ Let's go! :rocket:
 - [Day 17](day-17/README.md): The Quiz Project and the Benefits of OOP
 - [Day 18](day-18/README.md): Turtle and the GUI
 - [Day 19](day-19/README.md): Instances, State and Higher Order Functions
+- [Day 20](day-20/README.md): Build the Snake Game Part 1: Animation & Coordinates
