@@ -9,3 +9,12 @@
 ### Inheritance & List Slicing
 
 ![](snake-day-21.gif)
+
+To run the game type in the terminal:
+```
+$ python3.9 main.py
+```
+or
+```
+$ python3 main.py
+```
