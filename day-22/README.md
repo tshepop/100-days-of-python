@@ -10,6 +10,15 @@
 
 ---
 
+To run the program:
+```
+$ python3 main.py
+```
+Or any version of python installed version 3.8 and up
+```
+$ python3.9 main.py
+```
+
 Controlls for the paddles:
 
 
