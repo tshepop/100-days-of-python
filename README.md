@@ -41,3 +41,4 @@ Let's go! :rocket:
 - [Day 20](day-20/README.md): Build the Snake Game Part 1: Animation & Coordinates
 - [Day 21](day-21/README.md): Build the Snake Game Part 2: Inheritance & List Slicing
 - [Day 22](day-22/README.md): Build Pong: The Famous Arcade Game
+- [Day 23](day-23/README.md): The Turtle Crossing Capstone Project
