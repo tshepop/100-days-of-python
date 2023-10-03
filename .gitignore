@@ -11,6 +11,7 @@ media
 *.bak 
 
 # Python # 
+config.py
 *.py[cod] 
 *$py.class
 __pycache__/
