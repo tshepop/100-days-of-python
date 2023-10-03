@@ -85,3 +85,36 @@ res = requests.get(NEWS_ENDPOINT, params=news_data)
 # TODO 6. - Instead of printing ("Get News"), use the News API to get articles related to the COMPANY_NAME.
 company_news = res.json()["articles"]
 # print(company_news)
+
+# TODO 7. - Use Python slice operator to create a list that contains the first 3 articles. Hint: https://stackoverflow.com/questions/509211/understanding-slice-notation
+sliced_news = company_news[0:3]
+
+# STEP 3: Use twilio.com/docs/sms/quickstart/python
+# to send a separate message with each article's title and description to your phone number.
+
+# TODO 8. - Create a new list of the first 3 article's headline and description using list comprehension.
+articles_list = [(value["title"], value["description"])
+                 for value in sliced_news]
+# print(articles_list)
+
+# TODO 9. - Send each article as a separate message via Twilio.
+stock_up = "🔺"
+stock_down = "🔻"
+
+for title, desc in articles_list:
+    account_sid = TWILIO_ACCOUNT_SID
+    auth_token = TWILIO_AUTH_TOKEN
+    client = Client(account_sid, auth_token)
+
+    # message_body = f"{STOCK_NAME}: 🔺{stock_price_pct}%\nHeadline: {title}\nBrief: {desc}\n"
+
+    if stock_price_pct > 2:
+        message_body = f"{STOCK_NAME}: {stock_up} {stock_price_pct}%\nHeadline: {title}\nBrief: {desc}\n"
+    else:
+        message_body = f"{STOCK_NAME}: {stock_down} {stock_price_pct}%\nHeadline: {title}\nBrief: {desc}\n"
+
+    message = client.messages.create(
+        body=message_body,
+        from_='+13346058969',
+        to='+27813791664'
+    )
