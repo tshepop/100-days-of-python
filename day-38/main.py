@@ -27,3 +27,13 @@ parameters = {
 
 response = requests.post(url=EXERCISE_ENDPOINT,
                          json=parameters, headers=headers)
+
+# print(response.text)
+exercises = response.json()["exercises"]
+
+# data_list = [(value["user_input"], value["duration_min"], value["nf_calories"])
+#             for value in exercises]
+# print(data_list)
+
+# Get the current date and time
+today = datetime.now()
