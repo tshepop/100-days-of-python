@@ -19,3 +19,11 @@ headers = {
 
 # request input from user in a natural language format
 user_input = input("Tell me which exercises you did? ")
+
+# query the server
+parameters = {
+    "query": user_input
+}
+
+response = requests.post(url=EXERCISE_ENDPOINT,
+                         json=parameters, headers=headers)
