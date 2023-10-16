@@ -2,6 +2,8 @@
 
 **The Final Project**
 
+- [Stock trading news alert](https://replit.com/@supercodr/day-36-stock-trading-news-alert)
+
 How to run program, first install dependencies:
 
 - install twilio to be ble to send sms,

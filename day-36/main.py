@@ -108,7 +108,7 @@ for title, desc in articles_list:
 
     # message_body = f"{STOCK_NAME}: 🔺{stock_price_pct}%\nHeadline: {title}\nBrief: {desc}\n"
 
-    if stock_price_pct > 2:
+    if stock_price_pct > 5:
         message_body = f"{STOCK_NAME}: {stock_up} {stock_price_pct}%\nHeadline: {title}\nBrief: {desc}\n"
     else:
         message_body = f"{STOCK_NAME}: {stock_down} {stock_price_pct}%\nHeadline: {title}\nBrief: {desc}\n"
