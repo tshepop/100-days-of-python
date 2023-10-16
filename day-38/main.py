@@ -37,3 +37,21 @@ exercises = response.json()["exercises"]
 
 # Get the current date and time
 today = datetime.now()
+
+# loop the list object and retrieve values to pass to request body(json),
+# and save the passed values to google sheet or excel
+for index, value in enumerate(exercises):
+
+    body = {
+        "sheet1": {
+            "date": today.strftime("%Y%m%d"),
+            "time": today.strftime("%X"),
+            "exercise": str(value["user_input"]).title(),
+            "duration": value["duration_min"],
+            "calories": value["nf_calories"],
+        }
+    }
+
+    sheet_response = requests.post(url=ADD_ROW_ENDPOINT,
+                                   json=body, headers=headers)
+    print(sheet_response.text)
