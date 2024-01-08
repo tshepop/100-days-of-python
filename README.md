@@ -18,30 +18,30 @@ Let's go! :rocket:
 
 ## :man_technologist: :man_student: | Beginner
 
-- [Day 1](day-1/README.md): Working with variables in Python
-- [Day 2](day-2/README.md): Understanding data types and How to Manipulate Strings
-- [Day 3](day-3/README.md): Control Flow and Logical Operators
-- [Day 4](day-4/README.md): Randomisation and Python Lists
-- [Day 5](day-5/README.md): Python Loops
-- [Day 7](day-7/README.md): Hangman
-- [Day 8](day-8/README.md): Functions parameters and Caesar cipher
-- [Day 9](day-9/README.md): Dictionaries, Nesting and Secret Auction
-- [Day 10](day-10/README.md): Functions with Outputs
-- [Day 12](day-12/README.md): Scope and Number guessing game
-- [Day 13](day-13/README.md): Debugging: How to Find and Fix errors
-- [Day 14](day-14/README.md): Higher Lower Game Project
+- [x] [Day 1](day-1/README.md): Working with variables in Python
+- [x] [Day 2](day-2/README.md): Understanding data types and How to Manipulate Strings
+- [x] [Day 3](day-3/README.md): Control Flow and Logical Operators
+- [x] [Day 4](day-4/README.md): Randomisation and Python Lists
+- [x] [Day 5](day-5/README.md): Python Loops
+- [x] [Day 7](day-7/README.md): Hangman
+- [x] [Day 8](day-8/README.md): Functions parameters and Caesar cipher
+- [x] [Day 9](day-9/README.md): Dictionaries, Nesting and Secret Auction
+- [x] [Day 10](day-10/README.md): Functions with Outputs
+- [x] [Day 12](day-12/README.md): Scope and Number guessing game
+- [x] [Day 13](day-13/README.md): Debugging: How to Find and Fix errors
+- [x] [Day 14](day-14/README.md): Higher Lower Game Project
 
 ## :man_technologist: :man_student: | Intermediate
 
-- [Day 15](day-15/README.md): Local Development Environment Setup and Coffee Machine
-- [Day 16](day-16/README.md): Object Oriented Programming (OOP)
-- [Day 17](day-17/README.md): The Quiz Project and the Benefits of OOP
-- [Day 18](day-18/README.md): Turtle and the GUI
-- [Day 19](day-19/README.md): Instances, State and Higher Order Functions
-- [Day 20](day-20/README.md): Build the Snake Game Part 1: Animation & Coordinates
-- [Day 21](day-21/README.md): Build the Snake Game Part 2: Inheritance & List Slicing
-- [Day 22](day-22/README.md): Build Pong: The Famous Arcade Game
-- [Day 23](day-23/README.md): The Turtle Crossing Capstone Project
-- [Day 36](day-36/README.md): Stock Trading News Alert
-- [Day 38](day-38/README.md): Workout Tracking Using Google Sheets
-- [Day 39](day-39/README.md): Capstone Part 1: Flight Deal Finder
+- [x] [Day 15](day-15/README.md): Local Development Environment Setup and Coffee Machine
+- [x] [Day 16](day-16/README.md): Object Oriented Programming (OOP)
+- [x] [Day 17](day-17/README.md): The Quiz Project and the Benefits of OOP
+- [x] [Day 18](day-18/README.md): Turtle and the GUI
+- [x] [Day 19](day-19/README.md): Instances, State and Higher Order Functions
+- [x] [Day 20](day-20/README.md): Build the Snake Game Part 1: Animation & Coordinates
+- [x] [Day 21](day-21/README.md): Build the Snake Game Part 2: Inheritance & List Slicing
+- [x] [Day 22](day-22/README.md): Build Pong: The Famous Arcade Game
+- [x] [Day 23](day-23/README.md): The Turtle Crossing Capstone Project
+- [x] [Day 36](day-36/README.md): Stock Trading News Alert
+- [x] [Day 38](day-38/README.md): Workout Tracking Using Google Sheets
+- [x] [Day 39](day-39/README.md): Capstone Part 1: Flight Deal Finder
