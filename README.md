@@ -44,3 +44,4 @@ Let's go! :rocket:
 - [Day 23](day-23/README.md): The Turtle Crossing Capstone Project
 - [Day 36](day-36/README.md): Stock Trading News Alert
 - [Day 38](day-38/README.md): Workout Tracking Using Google Sheets
+- [Day 39](day-39/README.md): Capstone Part 1: Flight Deal Finder
