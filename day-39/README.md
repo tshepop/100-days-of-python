@@ -8,7 +8,8 @@
 - flight_search.py
 - notification_manager.py
 
---
+---
 
-To run the program in a shell
-`python3 main.py`
+To run the program in a shell:
+
+`$ python3 main.py`
