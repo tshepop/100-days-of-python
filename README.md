@@ -45,3 +45,4 @@ Let's go! :rocket:
 - [x] [Day 36](day-36/README.md): Stock Trading News Alert
 - [x] [Day 38](day-38/README.md): Workout Tracking Using Google Sheets
 - [x] [Day 39](day-39/README.md): Capstone Part 1: Flight Deal Finder
+- [x] [Day 41](day-41/README.md): Web Foundation- Introduction to HTML
