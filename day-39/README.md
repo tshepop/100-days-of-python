@@ -10,6 +10,10 @@
 
 ---
 
+![](simple.gif)
+
+---
+
 To run the program in a shell:
 
 `$ python3 main.py`
