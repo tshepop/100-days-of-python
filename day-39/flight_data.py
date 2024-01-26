@@ -14,6 +14,10 @@ next_day = date + timedelta(1)
 six_months_date = next_day + timedelta(6*30)
 # six_months_date = datetime(2024, 5, 18)
 
+"""
+This code needs refactoring, I struggled with this project to get it to work, my code is all over.
+IMPORTANT: I need to learn, understand OOP, class concepts.
+"""
 
 class FlightData:
     """This class is responsible for structuring the flight data."""
@@ -27,6 +31,7 @@ class FlightData:
     local_arrival: str
 
     def flight_details(self, city_code):
+        
         header = {
             "apikey": FLIGHT_API_KEY,
         }
@@ -39,24 +44,41 @@ class FlightData:
             "nights_in_dst_from": 7,
             "nights_in_dst_to": 28,
             "flight_type": "round",
+            "one_for_city": 1,
+            "max_stopovers": 0,
             "curr": "GBP",
-            # "limit": 5,
+            
         }
 
         response = requests.get(
             url=FLIGHT_SEARCH_ENDPOINT, params=params, headers=header)
-        resp = response.json()["data"][0]
+        
+        try:
+            self.resp = response.json()["data"][0]
 
-        self.departure_city = resp["cityFrom"]
-        self.departure_airport_code = resp["cityCodeFrom"]
-        self.price = resp["price"]
-        self.arrival_city = resp["cityTo"]
-        self.arrival_airport_code = resp["cityCodeTo"]
-        self.local_departure = resp["local_departure"]
-        self.local_arrival = resp["local_arrival"]
+        except IndexError:
+            print(f"No flight found for {self.resp['route'][0]['cityTo']}")
 
-        local_date_time = self.local_departure.split("T")
-        arrival_date_time = self.local_arrival.split("T")
+            
+        self.departure_city = self.resp["cityFrom"]
+        self.departure_airport_code = self.resp["cityCodeFrom"]
+        self.price = self.resp["price"]
+        self.arrival_city = self.resp["cityTo"]
+        self.arrival_airport_code = self.resp["cityCodeTo"]
+        self.local_departure = self.resp["local_departure"]
+        self.local_arrival = self.resp["local_arrival"]
+
+        
+        # self.departure_city = resp["cityFrom"]
+        # self.departure_airport_code = resp["cityCodeFrom"]
+        # self.price = resp["price"]
+        # self.arrival_city = resp["cityTo"]
+        # self.arrival_airport_code = resp["cityCodeTo"]
+        # self.local_departure = resp["local_departure"]
+        # self.local_arrival = resp["local_arrival"]
+
+        #local_date_time = self.local_departure.split("T")
+        #arrival_date_time = self.local_arrival.split("T")
 
         # testing my solution
         # data = f"From: {self.departure_city}\n \
@@ -73,10 +95,12 @@ class FlightData:
         flight_info = f"{arrival_city}: £{price}"
         print(flight_info)
 
-        return resp
+        return self.resp
+        #return self.data
 
 
 # for testing purpose
 
-# city = FlightData()
+#city = FlightData()
 # city.city_price()
+#print(city.flight_details("PAR"))
