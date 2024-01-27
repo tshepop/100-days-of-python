@@ -2,4 +2,7 @@
 
 **Final Project**
 
+![](color-vocab.png)
+
+---
 
