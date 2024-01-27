@@ -16,7 +16,7 @@ To move from beginner to mastery of Python. It will take years to full mastery, 
 To be a **backend developer**.
 Let's go! :rocket:
 
-# :man_technologist: :man_student: | Beginner
+## :man_technologist: :man_student: | Beginner
 
 - [x] [Day 1](day-1/README.md): Working with variables in Python
 - [x] [Day 2](day-2/README.md): Understanding data types and How to Manipulate Strings
@@ -31,7 +31,7 @@ Let's go! :rocket:
 - [x] [Day 13](day-13/README.md): Debugging: How to Find and Fix errors
 - [x] [Day 14](day-14/README.md): Higher Lower Game Project
 
-# :man_technologist: :man_student: | Intermediate
+## :man_technologist: :man_student: | Intermediate
 
 - [x] [Day 15](day-15/README.md): Local Development Environment Setup and Coffee Machine
 - [x] [Day 16](day-16/README.md): Object Oriented Programming (OOP)
@@ -47,3 +47,4 @@ Let's go! :rocket:
 - [x] [Day 39](day-39/README.md): Capstone Part 1: Flight Deal Finder
 - [x] [Day 41](day-41/README.md): Web Foundation- Introduction to HTML
 - [x] [Day 42](day-42/README.md): Web Foundation - Intermediate HTML
+- [x] [Day 43](day-43/README.md): Web Foundation - Introduction to CSS
