@@ -6,8 +6,10 @@
 
 ---
 
-- To run the program in a shell:
+To run the program in a shell:
+- Type
 
 `$ python3 main.py`
 - or
+
 `$ python3.10 main.py`
