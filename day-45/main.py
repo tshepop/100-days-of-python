@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import time
 
 URL = "https://web.archive.org/web/20200518073855/https://www.empireonline.com/movies/features/best-movies-2/"
 
@@ -17,8 +18,9 @@ movie_list.reverse()
 
 with open("movies.txt", "w") as file:
     for name in movie_list:
+        time.sleep(0.5)
         #print(name.getText())
         movie_titles = name.getText()
-        #print(movie_titles)
+        print(movie_titles)
         file.write(f"{movie_titles}\n")
 
