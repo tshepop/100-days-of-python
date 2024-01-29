@@ -2,11 +2,12 @@
 
 **Final Project**
 
+![](movies.gif)
 
 ---
 
-To run the program in a shell:
+- To run the program in a shell:
 
 `$ python3 main.py`
-or
+- or
 `$ python3.10 main.py`
