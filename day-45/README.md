@@ -1,0 +1,12 @@
+## Day 45 100 Movies that You Must Watch
+
+**Final Project**
+
+
+---
+
+To run the program in a shell:
+
+`$ python3 main.py`
+or
+`$ python3.10 main.py`
