@@ -49,4 +49,5 @@ Let's go! :rocket:
 - [x] [Day 42](day-42/README.md): Web Foundation - Intermediate HTML
 - [x] [Day 43](day-43/README.md): Web Foundation - Introduction to CSS
 - [x] [Day 44](day-44/README.md): Web Foundation - Intermediate CSS
+- [x] [Day 45](day-45/README.md): Wed Scraping with BeautifulSoup
 
