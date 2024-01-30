@@ -2,7 +2,7 @@
 
 **Final Project**
 
-![]()
+![](spotify.gif)
 
 ---
 
