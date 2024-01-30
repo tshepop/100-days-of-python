@@ -24,7 +24,6 @@ response = req.text
 soup = BeautifulSoup(response, "html.parser")
 #print(soup.prettify())
 
-#song_title_list = soup.find_all("h3", class_="c-title a-no-trucate a-font-primary-bold-s u-letter-spacing-0021 lrv-u-font-size-18@tablet lrv-u-font-size-16 u-line-height-125 u-line-height-normal@mobile-max a-truncate-ellipsis u-max-width-330 u-max-width-230@tablet-only")
 song_title_list = soup.find_all("h3", class_="a-no-trucate")
 #print(song_title_list)
 
@@ -46,14 +45,16 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=CLIENT_ID,
 
 user_id = sp.me()["id"]
 
-# I created the text file after, it was not created running after the script
-# comment the following code, adds no value to the program
+# The following code creates the token.txt file it was not created, after authentication
 # with open(r".cache", "r") as file, open("token.txt", "w") as file2:
 #     for line in file:
 #         file2.write(line)
 
 #songs_year = input("Which year do you want to travel to? Type date in this format(YYYY-MM-DD): ")
 #year = songs_year.split("-")[0]
+
+# create a txt file with the songs
+# we can pass the songs from the text file to spotify to create a playlist
 
 # results = []
 # with open("billboard-songs-100.txt", "r") as file:
@@ -65,18 +66,6 @@ user_id = sp.me()["id"]
 #         results.append(track)
 
 #print(results)
-
-#counter = 0
-# for name in results:
-#     try:
-#         track_name = sp.searchf(q=f"track:{name} year:{year}", limit=1, type="track")
-
-#         for track in track_name['tracks']['items'][0]:
-#             print(track['uri'])
-#             counter += 1
-#         print(counter)
-#     except IndexError:
-#         print("The song cannot be found!")
 
 uri_list = []
 for idx, name in enumerate(song_list):
