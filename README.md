@@ -50,4 +50,5 @@ Let's go! :rocket:
 - [x] [Day 43](day-43/README.md): Web Foundation - Introduction to CSS
 - [x] [Day 44](day-44/README.md): Web Foundation - Intermediate CSS
 - [x] [Day 45](day-45/README.md): Wed Scraping with BeautifulSoup
+- [x] [Day 46](day-46/README.md): Create a Spotify Playlist using The Musical Time Machine
 
