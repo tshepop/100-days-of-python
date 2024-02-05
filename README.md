@@ -51,4 +51,5 @@ Let's go! :rocket:
 - [x] [Day 44](day-44/README.md): Web Foundation - Intermediate CSS
 - [x] [Day 45](day-45/README.md): Wed Scraping with BeautifulSoup
 - [x] [Day 46](day-46/README.md): Create a Spotify Playlist using The Musical Time Machine
+- [x] [Day 47](day-47/README.md): Create an Automated Amazon Price Tracker
 
