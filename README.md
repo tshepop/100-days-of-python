@@ -53,3 +53,4 @@ Let's go! :rocket:
 - [x] [Day 46](day-46/README.md): Create a Spotify Playlist using The Musical Time Machine
 - [x] [Day 47](day-47/README.md): Create an Automated Amazon Price Tracker
 - [x] [Day 55](day-55/README.md): Intermediate+HTML&URL Parsing in Flask and the Higher Lower Game
+- [x] [Day 56](day-56/README.md): Intermediate+Rendering HTML/Static files and Using Website Templates
