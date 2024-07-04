@@ -54,3 +54,4 @@ Let's go! :rocket:
 - [x] [Day 47](day-47/README.md): Create an Automated Amazon Price Tracker
 - [x] [Day 55](day-55/README.md): Intermediate+HTML&URL Parsing in Flask and the Higher Lower Game
 - [x] [Day 56](day-56/README.md): Intermediate+Rendering HTML/Static files and Using Website Templates
+- [x] [Day 57](day-57/README.md): Intermediate+Templating with Jinja in Flask Applications
