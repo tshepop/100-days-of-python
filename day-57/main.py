@@ -20,9 +20,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    # url = "https://api.npoint.io/8ac47f941e3696aa2619"
-    # r = requests.get(url=url)
-    # response = r.json()
 
     return render_template("index.html", all_posts=response)
 
