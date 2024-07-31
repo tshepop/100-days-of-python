@@ -14,17 +14,6 @@ with open("blog.json") as f:
     response = json.load(f)
 
 
-# def info():
-#     image_dict = {
-#         "91magazine": "https://unsplash.com/photos/brown-and-black-camera-E_s7-xq0FAk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash",
-#         "adamsmigielski": "https://unsplash.com/photos/a-person-holding-a-cell-phone-in-front-of-a-stock-chart-K5mPtONmpHM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash",
-#         "robertocortese": "https://unsplash.com/photos/silver-iphone-6-on-white-table-F1I4IN86NiE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash",
-#         "glencarrie": "https://unsplash.com/photos/a-computer-screen-with-a-bunch-of-lines-on-it-mQ8GR35n8QQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash",
-#         "nasahubblespacetelescope": "https://unsplash.com/photos/a-very-large-star-cluster-in-the-sky-gZN4couQZx0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash",
-#         "anniespratt": "https://unsplash.com/photos/plant-near-organizer-and-tablet-keyboard-ase-bGdiuIyN3Rs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-#     }
-
-
 app = Flask(__name__)
 
 
