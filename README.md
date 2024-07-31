@@ -56,4 +56,4 @@ Let's go! :rocket:
 - [x] [Day 56](day-56/README.md): Intermediate+Rendering HTML/Static files and Using Website Templates
 - [x] [Day 57](day-57/README.md): Intermediate+Templating with Jinja in Flask Applications
 - [x] [Day 58](day-58/README.md): Web Foundation Bootstrap
-
+- [X] [Day 59](day-59/README.md): Advanced - Blog Capstone Project 2 - Adding Styling
