@@ -13,15 +13,16 @@ from flask import Flask, render_template
 with open("blog.json") as f:
     response = json.load(f)
 
+YEAR = datetime.now().year
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def index():
-    year = datetime.now().year
+
     return render_template("index.html",
-                           year=year,
+                           year=YEAR,
                            posts=response)
 
 
@@ -34,11 +35,22 @@ def post(id):
             all_posts = blog_post
             # image_name = str(blog_post['image']).split(".")[0]
 
-    year = datetime.now().year
+    # year = datetime.now().year
 
     return render_template("post.html",
-                           year=year,
+                           year=YEAR,
                            post=all_posts)
+
+
+@app.route("/about")
+def about():
+
+    return render_template("about.html", year=YEAR)
+
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html", year=YEAR)
 
 
 if __name__ == "__main__":
