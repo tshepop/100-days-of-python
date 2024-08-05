@@ -97,38 +97,5 @@ def contact():
     return render_template("contact.html", year=YEAR)
 
 
-@app.route("/email", methods=("GET", "POST"))
-def email():
-    heading = "Thank you, your message was delivered!"
-    error = None
-
-    if request.method == "POST":
-        name = request.form.get("name")
-        email = request.form.get("email")
-        phone = request.form.get("phone")
-        body = request.form.get("message")
-        request.form.data
-
-        if not name or not email or not phone or not body:
-            error = "All the fields are required."
-        elif not email:
-            error = "The email address is required."
-        elif not phone:
-            error = "The phone number is required."
-        elif not body:
-            error = "Message is required."
-
-        if error:
-            flash(error)
-            return redirect(url_for("contact"))
-
-    return render_template("subscribe.html",
-                           heading=heading,
-                           name=name,
-                           email=email,
-                           phone=phone,
-                           message=body)
-
-
 if __name__ == "__main__":
     app.run()
