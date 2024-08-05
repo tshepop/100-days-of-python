@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title%}Email Message{% endblock %}
+
+<!-- Page Header-->
+{% block header %}
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/anniespratt.jpg')}}');">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Dev's Blog</h1>
+                    <span class="subheading"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+<!-- Main Content-->
+{% block content %}
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <!-- Post preview-->
+            <div class="post-preview">
+                <h3 class="post-subtitle">{{message}}</h3>
+                <p>From: {{email_from}}</p>
+                <p>To: {{email_to}}</p>
+                <p>Message: {{body}}</p>
+
+                <p class="post-meta">
+                    Email by
+                    <a href="#!"></a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block image_detail %}
+<div class="small text-center text-muted fst-italic fs-6">
+    Photo by <a
+        href="https://unsplash.com/@anniespratt?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Annie
+        Spratt</a> on <a
+        href="https://unsplash.com/photos/plant-near-organizer-and-tablet-keyboard-ase-bGdiuIyN3Rs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+</div>
+{% endblock %}
