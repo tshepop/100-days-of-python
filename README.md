@@ -58,3 +58,4 @@ Let's go! :rocket:
 - [x] [Day 58](day-58/README.md): Web Foundation Bootstrap
 - [X] [Day 59](day-59/README.md): Advanced - Blog Capstone Project 2 - Adding Styling
 - [x] [Day 60](day-60/README.md): Advanced - Make POST Requests with Flask and HTML Forms
+- [x] [Day 61](day-61/README.md): Advanced - Building Advanced Forms with Flask-WTForms
