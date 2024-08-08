@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% from 'bootstrap4/form.html' import render_form, render_field %}
+
+
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="container">
+	<h1>Login</h1>
+	{{ render_form(form, action="/login", method="post", extra_classes="my-3",form_type="horizontal",
+	horizontal_columns=('lg', 2, 5), button_map={'submit': 'light'}, novalidate=True) }}
+
+	<!-- <form action="{{ url_for('login') }}" method="post" novalidate>
+		{{ form.csrf_token }}
+		<p>
+			{{ form.email.label }}: <br>{{ form.email(size=30) }}
+			{% if form.email.errors %}
+			{% for err in form.email.errors %}
+			<span style="color:red">{{ err }}</span>
+			{% endfor %}
+			{% endif %}
+		</p>
+		<p>{{ form.password.label }}: <br>{{ form.password(size=30)}}
+			{% for err in form.password.errors %}
+			<span style="color:red">{{err}}</span>
+			{% endfor %}
+		</p>
+		{{ form.submit }}
+	</form> -->
+
+</div>
+{% endblock %}
