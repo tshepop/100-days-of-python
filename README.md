@@ -59,3 +59,4 @@ Let's go! :rocket:
 - [X] [Day 59](day-59/README.md): Advanced - Blog Capstone Project 2 - Adding Styling
 - [x] [Day 60](day-60/README.md): Advanced - Make POST Requests with Flask and HTML Forms
 - [x] [Day 61](day-61/README.md): Advanced - Building Advanced Forms with Flask-WTForms
+- [x] [Day 62](day-61/README.md): Advanced - Flask, WTForms, Bootstrap and CSV - Coffee&Wifi Project
