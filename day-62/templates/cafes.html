@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% from 'bootstrap4/form.html' import render_form, render_field %}
+
+{% block title %}Restaurants{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <h1>All Cafes</h1>
+
+      <table class="table table-dark table-striped table-hover">
+        <!-- This is where you will write the code to render a Bootstrap 
+          Table that contains all the information from the 
+          cafe-data.csv file. -->
+        <thead>
+          {% for row in range(0, cafes|length) %}
+          <tr>
+            {% for column in cafes[row] %}
+            {% if row == 0 %}
+            <th>{{ column }}</th>
+            {% endif %}
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </thead>
+
+        <tbody>
+          {% for row in range(0, cafes|length) %}
+          <tr>
+            {% for column in cafes[row] %}
+            {% if row != 0 %}
+            {% if column.startswith('https') %}
+            <td><a href="{{ column }}">Maps Link</a></td>
+            {% else %}
+            <td>{{ column }}</td>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+
+      </table>
+
+      <p><a href="{{ url_for('home') }}">Return to index page</a></p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
