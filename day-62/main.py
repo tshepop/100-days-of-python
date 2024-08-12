@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, redirect, render_template, url_for
 from flask_bootstrap import Bootstrap4
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField
@@ -27,12 +27,13 @@ class CafeForm(FlaskForm):
                                 validate_choice=True)
     wifi_rating = SelectField('Wifi Strength Rating',
                               validators=[InputRequired()],
-                              choices=['💪' * i for i in range(0, 6)],
+                              choices=['✘' if i == 0 else '💪' *
+                                       i for i in range(0, 6)],
                               validate_choice=True)
     power_rating = SelectField('Power Socket Availability',
                                validators=[InputRequired()],
-                               choices=[
-                                   '🔌' * i for i in range(0, 6)],
+                               choices=['✘' if i == 0 else
+                                        '🔌' * i for i in range(0, 6)],
                                validate_choice=True)
     submit = SubmitField('Submit')
 
@@ -55,7 +56,7 @@ def home():
 def add_cafe():
     form = CafeForm()
     if form.validate_on_submit():
-        print("True")
+        # print("True")
 
         with open("cafe-data.csv", "a") as csvfile:
             data_write = csv.writer(csvfile)
@@ -67,8 +68,8 @@ def add_cafe():
                                  form.coffee_rating.data,
                                  form.wifi_rating.data,
                                  form.power_rating.data,])
-        csvfile.close()
 
+        return redirect(url_for('cafes'))
     return render_template('add.html', form=form)
 
 
