@@ -5,6 +5,10 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String, Boolean
 
+import config
+
+
+API_KEY = config.API_KEY
 
 app = Flask(__name__)
 
@@ -153,19 +157,23 @@ def update(id):
 @app.route("/report-closed/<int:id>", methods=["DELETE"])
 def delete(id):
     api = request.args.get("api-key")
-    db_record = db.get_or_404(Cafe, ident=id)
 
-    if not api:
+    if api != API_KEY:
         return jsonify(error={"error": "Sorry that's not allowed. Make sure you have the correct api_key."})
 
-    if not db_record:
-        return jsonify(error={"Not Found": "Sorry a cafe with that id was not found in the database."})
-
-    if api and db_record:
+    db_record = db.get_or_404(Cafe, ident=id)
+    if db_record:
         db.session.delete(db_record)
         db.session.commit()
         return jsonify(response={"success": "Successfully deleted the database record."})
 
+    if not db_record:
+        return jsonify(error={"Not Found": "Sorry a cafe with that id was not found in the database."})
+
+    # if api and db_record:
+    #     db.session.delete(db_record)
+    #     db.session.commit()
+    #     return jsonify(response={"success": "Successfully deleted the database record."})
 
 
 if __name__ == '__main__':
