@@ -63,3 +63,4 @@ Let's go! :rocket:
 - [x] [Day 63](day-63/README.md): Advanced - Databases with SQLite and SQLAlchemy
 - [x] [Day 64](day-64/README.md): Advanced - My Top 10 Movies Website
 - [x] [Day 66](day-66/README.md): Advanced - Building Your Own API with RESTful Routing
+- [x] [Day 67](day-67/README.md): Advanced - Blog Capstone Project Part 3 - RESTful Routing
