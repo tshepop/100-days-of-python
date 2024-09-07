@@ -7,7 +7,8 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, URL
 from flask_ckeditor import CKEditor, CKEditorField
-from datetime import date
+from datetime import datetime
+import config
 
 '''
 Make sure the required packages are installed: 
@@ -23,12 +24,16 @@ This will install the packages from the requirements.txt for this project.
 '''
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = config.APP_SECRET
 Bootstrap5(app)
 
 # CREATE DATABASE
+
+
 class Base(DeclarativeBase):
     pass
+
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
@@ -37,7 +42,8 @@ db.init_app(app)
 # CONFIGURE TABLE
 class BlogPost(db.Model):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    title: Mapped[str] = mapped_column(String(250), unique=True, nullable=False)
+    title: Mapped[str] = mapped_column(
+        String(250), unique=True, nullable=False)
     subtitle: Mapped[str] = mapped_column(String(250), nullable=False)
     date: Mapped[str] = mapped_column(String(250), nullable=False)
     body: Mapped[str] = mapped_column(Text, nullable=False)
@@ -51,11 +57,14 @@ with app.app_context():
 
 @app.route('/')
 def get_all_posts():
-    # TODO: Query the database for all the posts. Convert the data to a python list.
-    posts = []
+
+    posts = db.session.execute(db.select(BlogPost)).scalars().all()
+
     return render_template("index.html", all_posts=posts)
 
 # TODO: Add a route so that you can click on individual posts.
+
+
 @app.route('/')
 def show_post(post_id):
     # TODO: Retrieve a BlogPost from the database based on the post_id
