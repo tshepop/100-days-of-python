@@ -64,3 +64,4 @@ Let's go! :rocket:
 - [x] [Day 64](day-64/README.md): Advanced - My Top 10 Movies Website
 - [x] [Day 66](day-66/README.md): Advanced - Building Your Own API with RESTful Routing
 - [x] [Day 67](day-67/README.md): Advanced - Blog Capstone Project Part 3 - RESTful Routing
+- [x] [Day 68](day-68/README.md): Advanced - Authentication with Flask
