@@ -84,8 +84,56 @@ def register():
     return render_template("register.html")
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+
+    if current_user.is_authenticated:
+        return redirect(url_for("home"))
+
+    if request.method == "POST":
+        email = request.form['email']
+        password = request.form['password']
+        user = db.session.execute(
+            db.select(User).where(User.email == email)).scalar()
+
+        if user and check_password_hash(user.password, password):
+            login_user(user)
+            return redirect(url_for("secrets"))
+        else:
+            flash("Invalid email or password")
+            return redirect(url_for("login"))
+
+    # user_email = request.form.get("email")
+    # user_pass = request.form.get("password")
+
+    # user = db.session.execute(db.select(User).where(
+    #     User.email == user_email)).scalar()
+    # print(user.id)
+
+    # login_user(user)
+
+    # print("Logged in Successfully.")
+
+    # if request.method == "POST":
+    #     user_email = request.form.get('email')
+    #     user_pass = request.form.get('password')
+    #     error = None
+    #     print(user_email)
+
+    #     user = db.session.execute(
+    #         db.select(User).filter_by(email=user_email)).scalars().first()
+
+    #     if user is None:
+    #         error = "Incorrect email"
+    #         print(error)
+    #     elif not check_password_hash(user.password, user_pass):
+    #         error = "Incorrect password"
+    #         print(error)
+
+    #     if error is None:
+    #         print("Welcome to home.")
+    #     # flash(error)
+
     return render_template("login.html")
 
 
