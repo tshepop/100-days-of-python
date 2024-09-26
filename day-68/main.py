@@ -43,7 +43,8 @@ def load_user(id):
 
 @app.route('/')
 def home():
-    return render_template("index.html")
+    logged_in_message = "You are already logged in"
+    return render_template("index.html", message=logged_in_message)
 
 
 @app.route('/register', methods=['GET', 'POST'])
