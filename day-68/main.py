@@ -138,8 +138,13 @@ def login():
 
 
 @app.route('/secrets')
+@login_required
 def secrets():
-    return render_template("secrets.html")
+
+    if current_user.is_authenticated:
+        user = current_user.name
+
+    return render_template("secrets.html", name=user)
 
 
 @app.route('/logout')
