@@ -65,3 +65,4 @@ Let's go! :rocket:
 - [x] [Day 66](day-66/README.md): Advanced - Building Your Own API with RESTful Routing
 - [x] [Day 67](day-67/README.md): Advanced - Blog Capstone Project Part 3 - RESTful Routing
 - [x] [Day 68](day-68/README.md): Advanced - Authentication with Flask
+- [x] [Day 69](day-69/README.md): Advanced - Blog Capstone Project Part 4 - Adding Users
