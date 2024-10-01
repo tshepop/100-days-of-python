@@ -58,8 +58,12 @@ class BlogPost(db.Model):
     subtitle: Mapped[str] = mapped_column(String(250), nullable=False)
     date: Mapped[str] = mapped_column(String(250), nullable=False)
     body: Mapped[str] = mapped_column(Text, nullable=False)
-    author: Mapped[str] = mapped_column(String(250), nullable=False)
+    # author: Mapped[str] = mapped_column(String(250), nullable=False)
     img_url: Mapped[str] = mapped_column(String(250), nullable=False)
+    author_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
+    author: Mapped[list["User"]] = relationship(back_populates="post")
+    comments: Mapped[list["Comment"]] = relationship(
+        back_populates="comment_blog_post")
 
 
 # TODO: Create a User table for all your registered users.
