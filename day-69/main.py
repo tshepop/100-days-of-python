@@ -74,10 +74,49 @@ with app.app_context():
     db.create_all()
 
 
+@login_manager.user_loader
+def load_user(user_id):
+    return db.get_or_404(User, ident=user_id)
+
+
 # TODO: Use Werkzeug to hash the user's password when creating a new user.
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
-    return render_template("register.html")
+    if current_user.is_authenticated:
+        return redirect(url_for("home"))
+
+    form = RegisterForm()
+
+    if form.validate_on_submit():
+        name = form.name.data
+        email = form.email.data
+        password = form.password.data
+        error = None
+
+        user = db.session.execute(
+            db.select(User).where(User.email == email)).scalar()
+
+        if user:
+            error = "You've already signed up with that email, Please log in!"
+
+        new_user = User(
+            name=name,
+            email=email,
+            password=generate_password_hash(
+                password=password, method="pbkdf2:sha256", salt_length=12)
+        )
+        try:
+            db.session.add(new_user)
+            db.session.commit()
+        except Exception as e:
+            print(e)
+            flash(error)
+            return redirect(url_for("login"))
+        else:
+            login_user(new_user)
+            return redirect(url_for("get_all_posts"))
+
+    return render_template("register.html", form=form)
 
 
 # TODO: Retrieve a user from the database based on their email.
