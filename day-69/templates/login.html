@@ -2,10 +2,7 @@
 include "header.html" %}
 
 <!-- Page Header -->
-<header
-  class="masthead"
-  style="background-image: url('../static/assets/img/login-bg.jpg')"
->
+<header class="masthead" style="background-image: url('../static/assets/img/login-bg.jpg')">
   <div class="container position-relative px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
       <div class="col-md-10 col-lg-8 col-xl-7">
@@ -23,7 +20,21 @@ include "header.html" %}
     <div class="row">
       <!-- TODO: add a flash message here for users registering twice -->
       <div class="col-lg-8 col-md-10 mx-auto">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="w-100 p-3 alert alert-warning alert-dismissible fade show" role="alert">
+          {% for message in messages %}
+          <strong>{{ message}}</strong>
+          {% endfor %}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+        {% endwith %}
+      </div>
+
+      <div class="col-lg-8 col-md-10 mx-auto">
         <!--TODO: render login form here-->
+        {{ render_form(form, method='post') }}
       </div>
     </div>
   </div>
