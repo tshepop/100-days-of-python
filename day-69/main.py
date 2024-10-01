@@ -31,12 +31,17 @@ app.config['SECRET_KEY'] = config.SECRET_KEY
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
+
 # TODO: Configure Flask-Login
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 
 # CREATE DATABASE
 class Base(DeclarativeBase):
     pass
+
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
@@ -46,7 +51,8 @@ db.init_app(app)
 class BlogPost(db.Model):
     __tablename__ = "blog_posts"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    title: Mapped[str] = mapped_column(String(250), unique=True, nullable=False)
+    title: Mapped[str] = mapped_column(
+        String(250), unique=True, nullable=False)
     subtitle: Mapped[str] = mapped_column(String(250), nullable=False)
     date: Mapped[str] = mapped_column(String(250), nullable=False)
     body: Mapped[str] = mapped_column(Text, nullable=False)
@@ -54,7 +60,7 @@ class BlogPost(db.Model):
     img_url: Mapped[str] = mapped_column(String(250), nullable=False)
 
 
-# TODO: Create a User table for all your registered users. 
+# TODO: Create a User table for all your registered users.
 
 
 with app.app_context():
@@ -67,7 +73,7 @@ def register():
     return render_template("register.html")
 
 
-# TODO: Retrieve a user from the database based on their email. 
+# TODO: Retrieve a user from the database based on their email.
 @app.route('/login')
 def login():
     return render_template("login.html")
