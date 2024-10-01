@@ -4,7 +4,7 @@ from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
 from flask_ckeditor.utils import cleanify
 from flask_gravatar import Gravatar
-from flask_login import UserMixin, login_user, LoginManager, current_user, logout_user
+from flask_login import UserMixin, login_required, login_user, LoginManager, current_user, logout_user
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship, DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String, Text, ForeignKey
@@ -173,7 +173,9 @@ def login():
 
 
 @app.route('/logout')
+@login_required
 def logout():
+    logout_user()
     return redirect(url_for('get_all_posts'))
 
 
@@ -220,7 +222,7 @@ def show_post(post_id):
 
 # TODO: Use a decorator so only an admin user can create a new post
 @app.route("/new-post", methods=["GET", "POST"])
-@dmin_only
+@admin_only
 def add_new_post():
     form = CreatePostForm()
     if form.validate_on_submit():
