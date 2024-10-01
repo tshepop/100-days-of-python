@@ -2,15 +2,16 @@ from datetime import date
 from flask import Flask, abort, render_template, redirect, url_for, flash
 from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
+from flask_ckeditor.utils import cleanify
 from flask_gravatar import Gravatar
 from flask_login import UserMixin, login_user, LoginManager, current_user, logout_user
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship, DeclarativeBase, Mapped, mapped_column
-from sqlalchemy import Integer, String, Text
+from sqlalchemy import Integer, String, Text, ForeignKey
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 # Import your forms from the forms.py
-from forms import CreatePostForm, RegisterForm, LoginForm
+from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 import config
 
 '''
@@ -28,6 +29,7 @@ This will install the packages from the requirements.txt for this project.
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = config.SECRET_KEY
+app.config['CKEDITOR_SERVE_LOCAL'] = True
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
@@ -68,6 +70,22 @@ class User(UserMixin, db.Model):
     email: Mapped[str] = mapped_column(String(100), unique=True)
     password: Mapped[str] = mapped_column(String(100))
     name: Mapped[str] = mapped_column(String(100))
+    post: Mapped[list["BlogPost"]] = relationship(back_populates="author")
+    comments: Mapped[list["Comment"]] = relationship(
+        back_populates="comment_author")
+
+
+class Comment(db.Model):
+    __tablename__ = "comments"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    text: Mapped[str] = mapped_column(Text, nullable=False)
+    comment_author_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
+    comment_author: Mapped[list["User"]] = relationship(
+        back_populates="comments")
+    comment_blog_post: Mapped[list["BlogPost"]] = relationship(
+        back_populates="comments")
+    comment_post_id: Mapped[int] = mapped_column(ForeignKey("blog_posts.id"))
 
 
 with app.app_context():
@@ -167,14 +185,42 @@ def get_all_posts():
 
 
 # TODO: Allow logged-in users to comment on posts
-@app.route("/post/<int:post_id>")
+@app.route("/post/<int:post_id>", methods=['GET', 'POST'])
 def show_post(post_id):
+
+    form = CommentForm()
     requested_post = db.get_or_404(BlogPost, post_id)
-    return render_template("post.html", post=requested_post)
+
+    if form.validate_on_submit():
+        error = None
+
+        if current_user.is_authenticated:
+
+            try:
+                new_comment = Comment(
+                    text=cleanify(form.text.data),
+                    comment_author=current_user,
+                    comment_blog_post=requested_post
+                )
+            except Exception:
+                error = "Problem saving your comment."
+                flash(error)
+            else:
+                db.session.add(new_comment)
+                db.session.commit()
+                form.text.data = ""
+        else:
+            error = "You have to login to comment."
+            flash(error)
+            return redirect(url_for("login"))
+
+    return render_template("post.html", post=requested_post,
+                           form=form)
 
 
 # TODO: Use a decorator so only an admin user can create a new post
 @app.route("/new-post", methods=["GET", "POST"])
+@dmin_only
 def add_new_post():
     form = CreatePostForm()
     if form.validate_on_submit():
