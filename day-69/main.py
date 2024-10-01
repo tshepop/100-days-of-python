@@ -79,6 +79,15 @@ def load_user(user_id):
     return db.get_or_404(User, ident=user_id)
 
 
+def admin_only(function):
+    @wraps(function)
+    def decorated_function(*args, **kwargs):
+        if not current_user.id == 1:
+            return abort(403)
+        return function(*args, **kwargs)
+    return decorated_function
+
+
 # TODO: Use Werkzeug to hash the user's password when creating a new user.
 @app.route('/register', methods=['GET', 'POST'])
 def register():
